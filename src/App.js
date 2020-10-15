@@ -68,13 +68,30 @@ schema.isValid(form).then(valid=> setDisabled(!valid))
 
   return (
     <div>
-    <div style={{color:'red'}}>
+    <div style={{
+      color:'red'}}>
     <div>{errors.name}</div><div>{errors.email}</div>
     <div>{errors.password}</div><div>{errors.tos}</div>
     <div>{errors.subscribe}</div><div>{errors.role}</div>
     </div>
-     <form onSubmit={submit}> {/* //create a submit function to handle post request */}
 
+    <div style={{
+       display: 'flex',
+      justifyContent:'center',
+      flexDirection: 'column',
+      backgroundColor:'#EFEFEF',
+      padding:'1rem',
+      width:'100%%',}}>
+     <form onSubmit={submit}> {/* //create a submit function to handle post request */}
+<div style={{
+      display: 'flex',
+      justifyContent:'center',
+      flexDirection: 'column',
+      margin:'1rem',
+      padding:'1rem',
+      width:'60%',
+      border:'solid black 1px',
+     }} >
      <label>
      Name :
      <input onChange={change} value={form.name} name='name' type='text'/>
@@ -119,8 +136,15 @@ schema.isValid(form).then(valid=> setDisabled(!valid))
      </select>
      </label>
      {/* //(7)add submit button now that eveything is controlled by state */}
-     <button disabled={disabled}>Submit</button>
+     <button style={{
+      width:'30%',
+      marginTop:'1rem',
+     }} 
+     disabled={disabled}>Submit</button>
+     </div>
+     <div/>
      </form> 
+     </div>
     </div>
   )
 }
